@@ -30,7 +30,7 @@ CancelAsync();
 private void button1_Click(object sender, EventArgs e)  
 {  
   
-frmProcessBar frmPB = new frmProcessBar();  
+frmProgressBar frmPB = new frmProcessBar();  
 frmPB.Show();         //这里使用的是拖动控件形式来实现。也可以用创建形式来实现
  
 ///添加一个事件处理程序  
@@ -80,11 +80,11 @@ private void InsertDataWork(object sender , DoWorkEventArgs e)
         }  
   
   
-////frmProcessBar里代码  
+////frmProgressBar里代码  
   
-public partial class frmProcessBar : Form  
+public partial class frmProgressBar : Form  
     {  
-        public void ProcessbarForm()  
+        public void frmProgressBar()  
         {  
             InitializeComponent();  
         }  
@@ -104,7 +104,7 @@ public partial class frmProcessBar : Form
         /// <param name="e"></param>  
         public void ProgessChanged(object sender, ProgressChangedEventArgs e)  
         {  
-            this.progressBar1.Style = ProgressBarStyle.Continuous;  
-            this.progressBar1.Value = e.ProgressPercentage;  
+            this.progressBar1.Style = ProgressBarStyle.Marquee;  
+            //this.progressBar1.Value = e.ProgressPercentage;  
         }  
     } 
