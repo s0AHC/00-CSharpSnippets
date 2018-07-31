@@ -3,10 +3,10 @@ using MySql.Data.MySqlClient;
 //……
 //参考逻辑
 string insertSql = "INSERT INTO teacher (teacher.id, teacher.utc8_create, teacher.utc8_modify, teacher.`name`, teacher.office, teacher.other, teacher.contact) VALUES (@ID,@Create,@Modify,@Name,@Office,@Other,@Contact)";
-            string Conn = "Database='for_aurora';Data Source='localhost';User Id='root';Password='root';charset='utf8'";
-            MySqlConnection mySqlConnection = new MySqlConnection(Conn);//创建连接
-            mySqlConnection.Open();//先打开连接
-            MySqlTransaction mySqlTransaction = mySqlConnection.BeginTransaction();//后开启事务
+string Conn = "Database='for_aurora';Data Source='localhost';User Id='root';Password='root';charset='utf8'";
+MySqlConnection mySqlConnection = new MySqlConnection(Conn);//创建连接
+mySqlConnection.Open();//先打开连接
+MySqlTransaction mySqlTransaction = mySqlConnection.BeginTransaction();//后开启事务
 
             try
             {
