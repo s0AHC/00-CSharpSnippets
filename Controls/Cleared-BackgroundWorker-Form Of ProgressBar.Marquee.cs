@@ -1,4 +1,5 @@
-/*FormProgress是放置了ProgressBar的另一个窗体，backgroundWorker1由设计器生成，在设计窗口，可以直接从工具箱中把BackgroundWorker拖到设计器窗口上。
+/*
+FormProgress是放置了ProgressBar的另一个窗体，backgroundWorker1由设计器生成，在设计窗口，可以直接从工具箱中把BackgroundWorker拖到设计器窗口上。
 
 代码没有难度，相信小姑娘能看懂的。下面我们总结一下BackgroundWorker的用法，相信很多书上都有介绍，哪怕是抄MSDN的书。
 
@@ -9,8 +10,7 @@
 3、ProgressChanged事件，当调用ReportProgress方法报告进度后，会引发该事件，处理该事件实时更新进度条的显示。
 
 4、当任务执行完成后会引发RunWorkerCompleted事件，如果后台任务需要返回结果，可从事件参数RunWorkerCompletedEventArgs.Result属性中取得结果。
-那么，这个结果是怎么设置的呢？不妨再看看前面的DoWork事件，它的事件参数DoWorkEventArgs的Result属性，当我们的任务执行完成时，把结果赋给该属性，随后引发RunWorkerCompleted事件时，
-会把结果传递到RunWorkerCompletedEventArgs.Result属性。*/
+那么，这个结果是怎么设置的呢？不妨再看看前面的DoWork事件，它的事件参数DoWorkEventArgs的Result属性，当我们的任务执行完成时，把结果赋给该属性，随后引发RunWorkerCompleted事件时，会把结果传递到RunWorkerCompletedEventArgs.Result属性。*/
 
 using System;
 using System.Collections.Generic;

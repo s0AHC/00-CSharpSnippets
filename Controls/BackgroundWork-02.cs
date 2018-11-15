@@ -283,6 +283,9 @@ namespace BackgroundWorkerExample
             this.ResumeLayout(false);
 
         }
+
+        public Action BackgroundWork { get; set; }
+
 		#endregion
 
         [STAThread]
