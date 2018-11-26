@@ -36,9 +36,7 @@ public int ProcessValue
 
     set { this.progressBar1.Value = value; }
 
-}
-
- 
+} 
 
 /// <summary>
 
@@ -56,14 +54,11 @@ public ProgressBarStyle ProcessStyle
 
 
 
-第1步：创建进度条管理类ProcessOperator
+/*第1步：创建进度条管理类ProcessOperator,在该类中添加如下字段：*/
 
-在该类中添加如下字段：
+private BackgroundWorker _backgroundWorker;     //后台线程
 
-private BackgroundWorker _backgroundWorker;//后台线程
-
- private ProcessForm _processForm;//进度条窗体 
-
+private ProcessForm _processForm;       //进度条窗体 
 
 //添加如下公共属性、方法和事件：
 
@@ -93,8 +88,6 @@ private BackgroundWorker _backgroundWorker;//后台线程
 
         }
 
- 
-
         /// <summary>
 
         /// 后台任务执行完毕后事件
@@ -102,7 +95,6 @@ private BackgroundWorker _backgroundWorker;//后台线程
         /// </summary>
 
         public event EventHandler<EventArgs> BackgroundWorkerCompleted;
-
  
 
         /// <summary>
@@ -119,15 +111,13 @@ private BackgroundWorker _backgroundWorker;//后台线程
 
             _processForm.ShowDialog();
 
-        }
-
- 
+        } 
 
         #endregion 
 
 
-//其中，属性BackgroundWork可以指向一个无参数的方法，这里（客户端代码）用来指向要在后台执行的费时操作方法，在_backgroundWorker的事件DoWork中调用该委托指向的方法
-
+/*其中，属性BackgroundWork可以指向一个无参数的方法，这里（客户端代码）用来指向要在后台执行的费时操作方法，
+在_backgroundWorker的事件DoWork中调用该委托指向的方法*/
 //后台执行的操作
 
        private void _backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
@@ -145,9 +135,9 @@ private BackgroundWorker _backgroundWorker;//后台线程
        } 
 
 
-//public void Start() 为启动进度条的方法，调用该方法后，会在后台线程(_backgroundWorker.RunWorkerAsync(); )中执行费时操作(DoWork事件中的委托指向的方法)。同时，_processForm.ShowDialog()方法负责打开进度条窗体。
-
-//当后台方法执行完毕后，会触发backgroundWorker的RunWorkerCompleted事件，在该事件中关闭进度条窗体
+/*public void Start() 为启动进度条的方法，调用该方法后，会在后台线程(_backgroundWorker.RunWorkerAsync(); )中执行费时操作
+(DoWork事件中的委托指向的方法)。同时，_processForm.ShowDialog()方法负责打开进度条窗体。当后台方法执行完毕后，
+会触发backgroundWorker的RunWorkerCompleted事件，在该事件中关闭进度条窗体*/
 
 //操作进行完毕后关闭进度条窗体
 
