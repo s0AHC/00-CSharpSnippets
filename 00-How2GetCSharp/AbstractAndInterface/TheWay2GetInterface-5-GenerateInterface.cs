@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Threading.Channels;
+//using System.Threading.Channels;
 
 namespace AbstractInterface
 {
@@ -19,7 +19,7 @@ namespace AbstractInterface
             void Fill();
         }
 
-        abstract class Vehicle:IVehicle
+        public abstract class Vehicle:IVehicle
         {
             public virtual void Running()
             {
@@ -54,9 +54,16 @@ namespace AbstractInterface
 
         class Truck : Vehicle
         {
+            /*
+             *
+             * If doesn't implement abstract method Fill() which defined by abstract class Vehicle,
+             * will remind "abstract method not implement "
+             * 
+             */
+
             public override void Fill()
             {
-                Console.WriteLine("Truck Fill in abstract class Vehicle is a abstract method");
+                Console.WriteLine("test");
             }
 
             public override void Stop()
