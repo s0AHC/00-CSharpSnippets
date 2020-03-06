@@ -11,6 +11,8 @@ namespace AbstractInterface
             ivCar.Fill();
             IVehicle ivTruck= new Truck();
             ivTruck.Running();
+            Screen s=new LED();
+            s.PowerOn();
         } 
         interface IVehicle
         {
@@ -77,5 +79,29 @@ namespace AbstractInterface
             }
         }
 
+        abstract class Screen
+        {
+            public abstract void Appear();
+            public abstract void refresh();
+            public abstract void PowerOn();
+        }
+
+        class LED:Screen
+        {
+            public override void Appear()
+            {
+                Console.WriteLine("Output: Implement abstract method Appear");
+            }
+
+            public override void refresh()
+            {
+                Console.WriteLine("Output: Implement abstract method Refresh");
+            }
+
+            public override void PowerOn()
+            {
+                Console.WriteLine("Conclusion: derived class must implement all methods those have been defined in abstract class");
+            }
+        }
     }
 }
