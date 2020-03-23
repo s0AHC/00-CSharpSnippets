@@ -54,6 +54,7 @@ namespace CourseDelegate
             cgdDblSub(999, 333);
             var v3=cgdrDblDiv(66.99,3.3);
             // Don't just put cgdrDblDiv in output such as: Console.WriteLine($“{cgderDblDiv}”); use var please            
+            // 不要直接将cgdrDblDiv放到Console.WriteLine没有这个的重写😂
             Console.WriteLine(value: $"Customized Generic Delegate With Return: {v3}"); 
 
         }
