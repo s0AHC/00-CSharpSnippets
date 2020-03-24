@@ -14,8 +14,15 @@ namespace CourseDelegate
         // 自定义一个无返回值的泛型代理
         public delegate void CustomizedGenericDelegate<T>(T OperandA,T OperandB);
         
-        // Define a customized generic delegate with a return
-        // 自定义一个有返回值的泛型代理
+        /*
+         Define a customized generic delegate with a return
+         自定义一个有返回值的泛型代理
+         1. All argumets and return type should be put into the generic arguments list inclusived by <>, 
+         2. and conduct by arguments, the return type as ending. Same as Func delegate In example: T1 and T2 are argumets T is return type!
+         1. 所有泛型的形参和返回类型都应该被放置在泛型参数列表<>中, 并由参数开始，放完参数才能放返回类型。 
+         2. 本例中T1和T2是参数，T是返回类型,其实系统定义Func delegate也是这样的        
+        */
+
         public delegate T CustomizedGenericDelegateWithReturn<T1,T2,T>(T1 OperandA,T2 OperandB);
         static void Main(string[] args)
         {
