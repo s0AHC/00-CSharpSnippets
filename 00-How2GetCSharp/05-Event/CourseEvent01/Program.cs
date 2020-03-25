@@ -24,7 +24,6 @@ namespace CourseEvent01
 
             timer.Start();
             Console.ReadLine();
-
         }        
     }
 
