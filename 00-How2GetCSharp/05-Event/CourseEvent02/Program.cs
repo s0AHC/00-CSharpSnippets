@@ -13,11 +13,14 @@ namespace CourseEvent02
     {
         static void Main(string[] args)
         {
+            HereIsEventSource eventSource=new HereIsEventSource();
+            EventResponder eventResponder=new EventResponder();
+            eventSource.EventName+=eventResponder.Action;
              
         }
     }
 
-    // Define details arguments, this class should derived from EventArgs
+    // Define details arguments for event, this class should derived from EventArgs
     public class EventNameEventArgs:EventArgs
     {
 
@@ -39,8 +42,24 @@ namespace CourseEvent02
             2. Event: generate event, and specified this event constraint by which Event Handler delegate
             2. 事件: 生成事件，并指定此事件受哪个事件处理器代理的约束
         */
+        public event DelegateEventHandler EventName
+        {
+            add
+            {
+                this.delegateEventHandler+=value;
+            }
+            remove
+            {
+                this.delegateEventHandler-=value;
+            }
+        }
+    }
 
-        public event
-
+    public class EventResponder
+    {
+        public void Action(HereIsEventSource eventSource,EventNameEventArgs e)
+        {
+            System.Console.WriteLine(   "do something!");
+        }
     }
 }
